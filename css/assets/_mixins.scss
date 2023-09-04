@@ -1,0 +1,18 @@
+@mixin color() {
+    color: $primary-color;
+    font-size: 100px;
+}
+
+
+@mixin section($bg: $background-color) {
+    padding: 10rem 0;
+    background: $bg;
+}
+
+
+@mixin position-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

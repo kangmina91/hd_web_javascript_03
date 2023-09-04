@@ -1,0 +1,93 @@
+.TopBanner {
+    position: relative;
+    background: $primary-color;
+    height: 16rem;
+    overflow: hidden;
+
+    &.on {
+        height: 0;
+        transition: height 0.4s;
+    }
+
+    .itm01 {
+        a {
+            background-image: url(../../images/banner01.png);
+        }
+    }
+
+    .itm02 {
+        a {
+            background-image: url(../../images/banner02.jpg);
+        }
+    }
+
+    .itm03 {
+        a {
+            background-image: url(../../images/banner03.jpg);
+        }
+    }
+
+    .itm a {
+        display: block;
+        height: 16rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .dots {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+
+        // 스와이퍼에서는 자동으로 z-index: 1;이 먹혀져있으므로 처음엔 안 보임. 제트 인덱스 다시 먹여야 함.
+        z-index: 999;
+
+        display: flex;
+        gap: 8px;
+
+        & li {
+            display: flex;
+            align-items: center;
+            width: 4px;
+            height: 10px;
+
+
+            // li에 사이즈를 준 후에도 a에 블럭 처리를 해주고 같이 사이즈를 줘야 커서가 잡힌다
+            a {
+                display: block;
+                width: 4px;
+                height: 5px;
+                background: $light-color;
+                transition: height 0.4s;
+            }
+
+            &.on {
+                a {
+                    height: 10px;
+                }
+            }
+        }
+
+    }
+
+    .close {
+        position: absolute;
+        top: 3rem;
+        left: 50%;
+        margin-left: $default-size/2;
+        transform: translate(-100%, 0);
+        z-index: 999;
+
+
+        .icon {
+            color: $light-color;
+            font-size: 3.2rem;
+            font-variation-settings:
+                'wght' 200,
+        }
+    }
+
+}
